@@ -31,16 +31,16 @@ Este projeto implementa um pipeline completo de dados (ETL + Inferência) para t
 
 ### Principais Funcionalidades
 
-* **🧠 Busca Semântica**
+* **Busca Semântica**
   Diferente da busca por palavra-chave (Ctrl+F), o sistema entende o *significado* da pergunta para encontrar trechos relevantes no livro.
 
-* **📚 Citação de Fontes (Grounding)**
+* **Citação de Fontes (Grounding)**
   Toda resposta gerada pela IA indica a **página exata** do PDF onde a informação foi encontrada, garantindo rastreabilidade.
 
-* **🔪 Chunking Inteligente**
+* **Chunking Inteligente**
   Utiliza `RecursiveCharacterTextSplitter` para fatiar o texto respeitando a estrutura de parágrafos e frases, preservando o contexto.
 
-* **💾 Persistência Vetorial**
+* **Persistência Vetorial**
   Os dados processados são salvos localmente no **ChromaDB**, eliminando a necessidade de reprocessar o documento a cada execução.
 
 ---
@@ -61,12 +61,12 @@ Este projeto implementa um pipeline completo de dados (ETL + Inferência) para t
 git clone [https://github.com/SEU-USUARIO/project-gregor-rag.git](https://github.com/SEU-USUARIO/project-gregor-rag.git)
 cd project-gregor-rag
 ```
-**2 - Crie o ambiente virtual
+**2 - Crie o ambiente virtual**
 ```bash
     python -m venv venv
 venv/scripts/activate
 ```
-**3 - Instale as dependencias
+**3 - Instale as dependencias**
 ```
     pip install -r requirements.txt
 ```
@@ -80,7 +80,7 @@ O projeto opera em dois modos: Ingestão (preparação) e Chat (interação).
     python ingest.py
 ```
 
-Saída esperada: "✅ Sucesso! Banco de dados criado."
+Saída esperada: "Banco de dados criado."
 
 2. Inicie o Chatbot Este script carrega o banco e inicia a conversa.
 ```
@@ -103,3 +103,26 @@ OPENAI_API_KEY=sk-proj-sua-chave-aqui...
 ```
 
 Nota: Um arquivo de exemplo não é necessário pois a configuração é única, mas certifique-se de não commitar este arquivo.
+
+## 7. Estrutura do projeto
+```
+├── banco_dados_chroma/      # Banco Vetorial (Gerado pelo ingest.py)
+├── A-METAMORFOSE.pdf        # Documento fonte (Knowledge Base)
+├── ingest.py                # Script de ETL (Leitura, Chunking e Embeddings)
+├── main.py                  # Aplicação Principal (Chatbot RAG)
+├── .env                     # Variáveis de ambiente (Segurança)
+├── .gitignore               # Arquivos ignorados pelo Git
+├── requirements.txt         # Dependências do projeto
+└── README.md                # Documentação
+```
+
+## 8. Como contribuir
+
+1 - Realize um fork do projeto
+2 - Crie um branch seguindo os padrões
+3 - Faça commits semânticos
+4 - Envie uma pull request detalhando a mudança
+
+## 9. Licença
+
+Este projeto está licenciado sob MIT License. Sinta-se livre para estudar, modificar e usar em seu portfólio.
