@@ -1,0 +1,11 @@
+.env
+
+venv/
+.venv/
+
+#É recriado pelo ingest.py
+banco_dados_chroma/
+
+# Arquivos de cache do Python
+__pycache__/
+*.pyc
