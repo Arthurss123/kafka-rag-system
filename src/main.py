@@ -46,7 +46,7 @@ def perguntar(query):
     return resposta_texto
 
 if __name__ == "__main__":
-    print("--- Chatbot Kafka (Versão Moderna v1+) ---")
+    print("Chatbot Kafka")
     while True:
         user_input = input("\nVocê: ")
         if user_input.lower() in ['sair', 'exit']:
@@ -56,4 +56,4 @@ if __name__ == "__main__":
             resp = perguntar(user_input)
             print(f"IA: {resp}")
         except Exception as e:
-            print(f"Erro detalhado: {e}")
+            print(f"Erro: {e}")
